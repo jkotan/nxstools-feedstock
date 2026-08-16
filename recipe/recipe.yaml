@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "4.63.0"
+  version: "4.63.1"
 
 package:
   name: nxstools
@@ -9,23 +9,21 @@ package:
 
 source:
   url: https://github.com/nexdatas/nxstools/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: be00038fa7d9e1a9c0ceb71199dedd998edb22f5c82d88e161f4de0bb5114ca9
-  patches:
-    - add-windows-support.patch
+  sha256: 84a9914d0fc72e1cc11aed0c18a0ef9e02c77cc14002d82a890d077ce1c972e6
 
 build:
   noarch: python
   number: 0
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  python:  
+  python:
     entry_points:
       - nxsconfig = nxstools.nxsconfig:main
       - nxscreate = nxstools.nxscreate:main
-      - nxsdata = nxstools.nxsdata:main 
-      - nxsetup = nxstools.nxsetup:main 
-      - nxsfileinfo = nxstools.nxsfileinfo:main 
-      - nxscollect = nxstools.nxscollect:main 
+      - nxsdata = nxstools.nxsdata:main
+      - nxsetup = nxstools.nxsetup:main
+      - nxsfileinfo = nxstools.nxsfileinfo:main
+      - nxscollect = nxstools.nxscollect:main
 
 requirements:
   host:
@@ -61,7 +59,7 @@ tests:
         - nxstools.nxsconfig
         - nxstools.nxscreate
         - nxstools.nxscreator
-        - nxstools.nxsdata 
+        - nxstools.nxsdata
         - nxstools.nxsetup
         - nxstools.nxsfileinfo
         - nxstools.nxsfileparser
