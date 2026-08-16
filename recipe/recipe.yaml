@@ -10,8 +10,6 @@ package:
 source:
   url: https://github.com/nexdatas/nxstools/archive/refs/tags/v${{ version }}.tar.gz
   sha256: 84a9914d0fc72e1cc11aed0c18a0ef9e02c77cc14002d82a890d077ce1c972e6
-  patches:
-    - add-windows-support.patch
 
 build:
   noarch: python
